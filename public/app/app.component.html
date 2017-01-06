@@ -1,0 +1,54 @@
+<md-sidenav-layout>
+    <md-sidenav #end align="start" mode="push">
+        <div class="cl-user__details">
+            <div class="cl-user__photo">
+            </div>
+            <div class="cl-user__info">
+                <p>{{first}} {{last}}</p>
+                <p>{{email}}</p>
+            </div>
+        </div>
+        <nav class="" id="navigation" role="navigation">
+            <ul class="nav">
+                <li>
+                    <md-input #search placeholder="search..." (keyup.enter)="searchMovie(search.value)" (keyup.enter)="end.close()">
+                    </md-input>
+                </li>
+                <li>
+                    <a routerLink="/index" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>home</md-icon> Home</a>
+                </li>
+                <li>
+                    <a routerLink="/upcoming" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>skip_next</md-icon> Coming Soon</a>
+                </li>
+                <li [hidden]="!isConnected">
+                    <a routerLink="/dashboard" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>dashboard</md-icon> Dashboard</a>
+                </li>
+                <li [hidden]="!isConnected">
+                    <a routerLink="/watch-later" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>check</md-icon> This I Must See</a>
+                </li>
+                <li [hidden]="!isConnected">
+                    <a routerLink="/favorite-movie" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>star</md-icon> The best</a>
+                </li>
+                <li [hidden]="isConnected">
+                    <a routerLink="/sign-in" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>account_circle</md-icon> Sign In</a>
+                </li>
+                <li [hidden]="!isConnected">
+                    <a (click)="end.close()" (click)="onSignOut()">
+                        <md-icon>cancel</md-icon> Sign Out</a>
+                </li>
+            </ul>
+        </nav>
+    </md-sidenav>
+    <button class="app-icon-button" (click)="end.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    <div class="app-content">
+        <router-outlet></router-outlet>
+    </div>
+</md-sidenav-layout>

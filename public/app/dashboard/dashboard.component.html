@@ -1,0 +1,13 @@
+<h1>Hello {{displayName}}</h1>
+<form (ngSubmit)="onSubmit(formData)" #formData='ngForm'>
+    <md-card>
+        <md-input type="text" name="displayName" [(ngModel)]="displayName" required></md-input>
+        <md-input type="email" name="email" [(ngModel)]="email" required></md-input>
+        <md-checkbox type="checkbox" name="emailVerified" [(ngModel)]="emailVerified" disabled>
+            <label>Email Verified</label>
+        </md-checkbox>
+        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">Submit</button>
+    </md-card>
+</form>
+<h2>Delete your Account ?</h2>
+<a (click)="confirmDialog()">Delete</a>

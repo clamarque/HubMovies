@@ -1,0 +1,25 @@
+<md-card *ngIf="movieDetails">
+    <md-card-header>
+        <md-card-title>{{movieDetails.title}}</md-card-title>
+        <md-card-subtitle>{{movieDetails.release_date | date: 'dd/MM/yyyy'}} | {{movieDetails.vote_average}}</md-card-subtitle>
+    </md-card-header>
+    <img src="https://image.tmdb.org/t/p/w500/{{movieDetails.poster_path}}" alt="poster movie" width="252">
+    <md-card-content>
+        <p>{{movieDetails.overview}}</p>
+    </md-card-content>
+    <md-card-actions>
+        <div [hidden]="!isConnected">
+            <button md-button (click)="saveMovie(movieDetails, 'MovieLater')">WATCH LATER</button>
+            <button md-button (click)="saveMovie(movieDetails, 'FavoriteMovie')">FAVORITE MOVIE</button>
+        </div>
+    </md-card-actions>
+</md-card>
+
+<md-card *ngIf="movieVideo">
+    <div *ngFor="let movies of movieVideo.results; let i=index">
+        <div *ngIf="url != null && i < 1">
+            <iframe [src]="url" allowfullscreen></iframe>
+        </div>
+        <a (click)="seeTrailer(movies.key)">See trailer</a>
+    </div>
+</md-card>

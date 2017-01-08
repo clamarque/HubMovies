@@ -196,6 +196,11 @@ ul li {
 .disabled {
     color: #999;
 }
+
+movie-component img {
+    margin: 10px 0;
+}
+
 @media screen and (max-width: 480px) {
     md-checkbox,
     md-input {
@@ -208,6 +213,15 @@ ul li {
     }
     .pagination {
         -webkit-padding-start: 0 !important;
+    }
+    movie-component img {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width:768px) {
+    movie-component img {
+        width: 500px;
     }
 }
 iframe {

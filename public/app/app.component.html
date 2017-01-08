@@ -11,7 +11,7 @@
         <nav class="" id="navigation" role="navigation">
             <ul class="nav">
                 <li>
-                    <md-input #search placeholder="search..." (keyup.enter)="searchMovie(search.value)" (keyup.enter)="end.close()">
+                    <md-input #search placeholder="search..." (keyup.enter)="searchMovie(search.value); search.value=''" (keyup.enter)="end.close()">
                     </md-input>
                 </li>
                 <li>
@@ -24,7 +24,7 @@
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/dashboard" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>dashboard</md-icon> Dashboard</a>
+                        <md-icon>account_circle</md-icon> Profile</a>
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/watch-later" routerLinkActive="active" (click)="end.close()">

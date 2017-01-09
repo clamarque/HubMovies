@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DialogDeleteUser } from './dashboard/dashboard.component';
-import { FavoriteMovieComponent } from './favoriteMovie/favoritemovie.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 import { MovieComponent } from './movie/movie.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component'
 import { SearchComponent } from './search/search.component';
@@ -52,7 +52,7 @@ export const firebaseAuthConfig = {
         IndexComponent,
         DashboardComponent,
         DialogDeleteUser,
-        FavoriteMovieComponent,
+        FavoriteComponent,
         MovieComponent,
         ResetPasswordComponent,
         SearchComponent,

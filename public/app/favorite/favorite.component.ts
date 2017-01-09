@@ -8,10 +8,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     //moduleId: module.id.replace('/dist/', '/'),
-    selector: 'watch-later-component',
-    templateUrl: './app/watch-later/watch-later.component.html'
+    selector: 'favorite-component',
+    templateUrl: './app/favorite/favorite.component.html'
 })
-export class WatchLaterComponent implements OnInit {
+export class FavoriteComponent implements OnInit {
     error: string;
     isConnected: boolean = false;
     movies = [];
@@ -25,11 +25,11 @@ export class WatchLaterComponent implements OnInit {
     }
 
     deleteMovie(key: any) {
-        this.authService.deleteMovies('MovieLater' , key);
+        this.authService.deleteMovies('FavoriteMovie', key);
     }
 
     ngOnInit() {
-        this.authService.getMovies('MovieLater').subscribe(data => {
+        this.authService.getMovies('FavoriteMovie').subscribe(data => {
             this.movies = data
         })
 

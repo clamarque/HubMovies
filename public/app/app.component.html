@@ -28,10 +28,10 @@
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/watch-later" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>check</md-icon> This I Must See</a>
+                        <md-icon>watch_later</md-icon> This I Must See</a>
                 </li>
                 <li [hidden]="!isConnected">
-                    <a routerLink="/favorite-movie" routerLinkActive="active" (click)="end.close()">
+                    <a routerLink="/favorites" routerLinkActive="active" (click)="end.close()">
                         <md-icon>star</md-icon> The best</a>
                 </li>
                 <li [hidden]="isConnected">
@@ -41,6 +41,9 @@
                 <li [hidden]="!isConnected">
                     <a (click)="end.close()" (click)="onSignOut()">
                         <md-icon>cancel</md-icon> Sign Out</a>
+                </li>
+                <li>
+                    <a href="mailto:chabox59@gmail.com"><md-icon>bug_report</md-icon> Feedbacks</a>
                 </li>
             </ul>
         </nav>

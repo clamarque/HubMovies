@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+import { ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { DataService } from '../shared/_services/index';
 
@@ -15,7 +16,7 @@ export class SearchComponent implements OnInit {
     pager: any = {}
     currentPage: number;
 
-    constructor(private dataService: DataService, private route: ActivatedRoute, private location: Location) { }
+    constructor(private dataService: DataService, private route: ActivatedRoute, private location: Location, private snackbar: MdSnackBar) { }
 
     setPage(page: number) {
         if (page < 1 || page > this.pager.totalPages) {
@@ -25,19 +26,26 @@ export class SearchComponent implements OnInit {
         this.currentPage = this.pager.currentPage;
         this.route.params
             .switchMap((params: Params) => this.dataService.getSearchMovie(params['term'], this.currentPage))
-            .subscribe(response => {
-                this.movieSearching = response
+            .subscribe(data => {
+                if(data.total_results > 0) this.movieSearching = data
+                else {
+                    this.movieSearching == null
+                    this.snackbar.open('No results found', 'retry', { duration: 10000 })
+                } 
             })
     }
 
     ngOnInit() {
         this.route.params
             .switchMap((params: Params) => this.dataService.getSearchMovie(params['term'], 1))
-            .subscribe(response => {
-                this.movieSearching = response
-                console.log('Searching...', this.movieSearching)
-                this.totalPages = response.total_pages
-                this.setPage(1)
+            .subscribe(data => {
+                console.log(data.total_results)
+                if (data.total_results > 0) {
+                    this.movieSearching = data
+                    this.totalPages = data.total_pages
+                    this.setPage(1)
+                }
+                else this.movieSearching == null
             })
     }
 }

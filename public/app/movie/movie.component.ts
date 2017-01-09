@@ -13,7 +13,7 @@ import { DomSanitizer } from '@angular/platform-browser';
     templateUrl: './app/movie/movie.component.html'
 })
 export class MovieComponent implements OnInit {
-    movieDetails: any[];
+    movie: any[];
     movieVideo: any[];
     error: string;
     isConnected: boolean = false;
@@ -43,8 +43,8 @@ export class MovieComponent implements OnInit {
         this.route.params
             .switchMap((params: Params) => this.dataService.getDetailsMovie(+params['id']))
             .subscribe(response => {
-                this.movieDetails = response
-                console.log('movie', this.movieDetails)
+                this.movie = response
+                console.log('movie', this.movie)
             })
 
         this.route.params

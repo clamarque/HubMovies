@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/_services/index'
 import { IndexComponent } from './index/index.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FavoriteMovieComponent } from './favoriteMovie/favoritemovie.component'
+import { FavoriteComponent } from './favorite/favorite.component'
 import { MovieComponent } from './movie/movie.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component'
 import { SearchComponent } from './search/search.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/index', pathMatch: 'full' },
     { path: 'index', component: IndexComponent },
     { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-    { path: 'favorite-movie', component: FavoriteMovieComponent, canActivate: [AuthGuard] },
+    { path: 'favorites', component: FavoriteComponent, canActivate: [AuthGuard] },
     { path: 'movie/:id', component: MovieComponent },
     { path: 'reset-password', component: ResetPasswordComponent },
     { path: 'search/:term', component: SearchComponent },

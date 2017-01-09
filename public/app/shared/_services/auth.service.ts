@@ -47,10 +47,40 @@ export class AuthService {
         })
         return this.af.database.list(category + '/' + uid)
     }
+    setMovie(movie: any, category: string, callback: any) {
+        let uid
+        this.af.auth.subscribe(authData => {
+            if (authData != null) uid = authData.uid
+        })
+        const list = this.af.database.list(category + '/' + uid)
+        list.subscribe(data => {
+            console.log(data)
+            for (let index = 0; index < 1; index++) {
+                for (let entry in data) {
+                    console.log('data:', data[entry].id)
+                    if (data[entry].id == movie.id) {
+                        console.log('movie in db')
+                    } else {
+                        console.log('movie not in db')
+                        this.af.database.list(category + '/' + uid).push({
+                            'id': movie.id,
+                            'original_title': movie.original_title,
+                            'overview': movie.overview,
+                            'popularity': movie.popularity,
+                            'release_date': movie.release_date,
+                            'poster_path': movie.poster_path
+                        })
+                        index = 1
+                    }
+                }
+            }
+        })
+
+    }
 
     setMovies(movie: any, category: string, callback: any) {
         return this.af.auth.subscribe(authData => {
-            
+
             this.af.database.list(category + '/' + authData.uid).push({
                 'id': movie.id,
                 'original_title': movie.original_title,

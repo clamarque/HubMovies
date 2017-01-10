@@ -69,6 +69,7 @@ upcoming-component .items .item.item:last-child,
 index-component .items .item:last-child,
 search-component .items .item:last-child {
     margin: 0;
+    width: 100%;
     max-width: 100%;
     flex: inherit;
 }

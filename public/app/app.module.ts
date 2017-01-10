@@ -12,10 +12,11 @@ import { AuthGuard, AuthService } from './shared/_services/index'
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component'
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DialogDeleteUser } from './dashboard/dashboard.component';
+import { DiscoverComponent } from './discover/discover.component';
+import { DialogDeleteUser } from './profile/profile.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { MovieComponent } from './movie/movie.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component'
 import { SearchComponent } from './search/search.component';
 import { SignInComponent } from './signin/signin.component';
@@ -50,10 +51,11 @@ export const firebaseAuthConfig = {
     declarations: [
         AppComponent,
         IndexComponent,
-        DashboardComponent,
+        DiscoverComponent,
         DialogDeleteUser,
         FavoriteComponent,
         MovieComponent,
+        ProfileComponent,
         ResetPasswordComponent,
         SearchComponent,
         SignInComponent,

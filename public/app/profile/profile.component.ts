@@ -6,11 +6,11 @@ import { MdDialog, MdDialogRef } from '@angular/material'
 
 @Component({
   //moduleId: module.id.replace('/dist/', '/'),
-  selector: 'dashboard-component',
-  templateUrl: './app/dashboard/dashboard.component.html',
+  selector: 'profile-component',
+  templateUrl: './app/profile/profile.component.html',
   providers: [MdDialog]
 })
-export class DashboardComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
   displayName: string;
   email: string;
@@ -29,7 +29,6 @@ export class DashboardComponent implements OnInit {
     });
 
     this.dialogRef.afterClosed().subscribe(result => {
-      console.log('result: ' + result);
       this.dialogRef = null;
       if (result === 'yes') this.deleteAccount()
       else console.log('cancel')
@@ -56,7 +55,7 @@ export class DashboardComponent implements OnInit {
         }
         else {
           this.snackbar.open('Success ! Your modifications was been applicated', '', { duration: 5000 })
-          this.router.navigate(['/dashboard'])
+          this.router.navigate(['/profile'])
         }
       })
     }

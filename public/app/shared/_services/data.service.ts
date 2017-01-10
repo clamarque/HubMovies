@@ -30,6 +30,10 @@ export class DataService {
         return this.http.get(this.url + 'movie/' + code + '?api_key=' + this.partner + '&language=fr-FR')
             .map((res: Response) => res.json())
     }
+    getMovieDiscover(page: number) {
+        return this.http.get(this.url + 'discover/movie?api_key=' + this.partner + '&language=fr&sort_by=popularity.desc&include_video=false&page=' + page)
+            .map((res: Response) => res.json())
+    }
 
     getVideoMovie(code: number) {
         return this.http.get(this.url + 'movie/' + code + '/videos?api_key=' + this.partner + '&language=fr-FR')

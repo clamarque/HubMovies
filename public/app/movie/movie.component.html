@@ -3,11 +3,14 @@
         <md-card-title>{{movie.title}}</md-card-title>
         <md-card-subtitle>
             <md-icon>date_range</md-icon> {{movie.release_date | date: 'dd/MM/yyyy'}} |
-             <span *ngIf="movie.vote_average >= 5"> <md-icon class="md-green">thumb_up</md-icon> {{movie.vote_average}}</span>
-             <span *ngIf="movie.vote_average < 5"> <md-icon class="md-red">thumb_down</md-icon> {{movie.vote_average}}</span>
+            <span *ngIf="movie.vote_average >= 5"> <md-icon class="md-green">thumb_up</md-icon> {{movie.vote_average}} | </span>
+            <span *ngIf="movie.vote_average < 5"> <md-icon class="md-red">thumb_down</md-icon> {{movie.vote_average}} | </span>
+            <div class="genre" *ngFor="let genre of movie.genres; let i=index">
+                <span *ngIf="i < 3">{{genre.name}},</span>
+            </div>
         </md-card-subtitle>
     </md-card-header>
-    <!--<img src="https://image.tmdb.org/t/p/w780/{{movie.backdrop_path}}" alt="poster movie">-->
+    <img src="https://image.tmdb.org/t/p/w780/{{movie.backdrop_path}}" alt="poster movie">
     <md-card-content>
         <p>{{movie.overview}}</p>
     </md-card-content>
@@ -24,6 +27,7 @@
         <div *ngIf="url != null && i < 1">
             <iframe [src]="url" allowfullscreen></iframe>
         </div>
-        <a (click)="seeTrailer(movies.key)"><md-icon>local_movies</md-icon>Trailer {{i + 1}}</a>
+        <a (click)="seeTrailer(movies.key)">
+            <md-icon>local_movies</md-icon>Trailer {{i + 1}}</a>
     </div>
 </md-card>

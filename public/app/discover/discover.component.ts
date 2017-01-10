@@ -3,10 +3,10 @@ import { DataService } from '../shared/_services/index';
 
 @Component({
     //moduleId: module.id.replace('/dist/', '/'),
-    selector: 'upcoming-component',
-    templateUrl: './app/upcoming/upcoming.component.html'
+    selector: 'discover-component',
+    templateUrl: './app/discover/discover.component.html'
 })
-export class UpcomingComponent implements OnInit {
+export class DiscoverComponent implements OnInit {
     movies: any[];
     totalPages: number;
     pager: any = {}
@@ -20,13 +20,13 @@ export class UpcomingComponent implements OnInit {
         }
         this.pager = this.dataService.getPager(this.totalPages, page);
         this.currentPage = this.pager.currentPage;
-        this.dataService.getUpComing(this.currentPage).subscribe(response => {
+        this.dataService.getMovieDiscover(this.currentPage).subscribe(response => {
             this.movies = response
         })
     }
 
     ngOnInit() {
-        this.dataService.getUpComing(1).subscribe(response => {
+        this.dataService.getMovieDiscover(1).subscribe(response => {
             this.totalPages = response.total_pages
             this.setPage(1)
         })

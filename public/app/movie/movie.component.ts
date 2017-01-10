@@ -1,11 +1,10 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap';
-import { AuthService, DataService } from '../shared/_services/index';
-
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute, Params } from '@angular/router';
+import { AuthService, DataService } from '../shared/_services/index';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
     //moduleId: module.id.replace('/dist/', '/'),
@@ -17,7 +16,6 @@ export class MovieComponent implements OnInit {
     movieVideo: any[];
     error: string;
     isConnected: boolean = false;
-
     baseUrl: string = 'https://www.youtube.com/embed/';
     url: any
 

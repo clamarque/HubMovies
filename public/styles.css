@@ -33,6 +33,10 @@ button.app-icon-button {
 button.md-simple-snackbar-action {
     color: #00796b !important;
 }
+.genre {
+    display: inline-block;
+    padding-right: 5px;
+}
 h1 {
     font-weight: 100;
 }
@@ -62,6 +66,7 @@ input:-webkit-autofill {
     margin-left: 10px;
     margin-top: 10px;
 }
+discover-component .items .item.item:last-child,
 upcoming-component .items .item.item:last-child,
 index-component .items .item:last-child,
 search-component .items .item:last-child {
@@ -69,14 +74,28 @@ search-component .items .item:last-child {
     max-width: 100%;
     flex: inherit;
 }
+.launcher {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
 md-card > md-card-actions:last-child {
     margin-bottom: 0 !important;
 }
 md-card {
     margin: 10px 0;
 }
+md-card-title, md-card-content {
+    text-align: left;
+}
 [md-card-image] {
     width: calc(100% + 20px) !important;
+}
+.md-movies {
+    font-size: 32px;
+    vertical-align: middle;
 }
 .md-green {
     color: #4CAF50;

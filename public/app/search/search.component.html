@@ -1,10 +1,10 @@
-<div class="items" *ngIf="movieSearching">
-    <div class="item" *ngFor="let movies of movieSearching.results">
-        <a [routerLink]="['/movie', movies.id]">
-            <img src="https://image.tmdb.org/t/p/w500/{{movies.poster_path}}" alt="poster movie" width="200">
-            <p>{{movies.title}}</p>
+<div class="items" *ngIf="movies">
+    <div class="item" *ngFor="let movie of movies.results">
+        <a [routerLink]="['/movie', movie.id]">
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie" width="200">
+            <p>{{movie.title}}</p>
         </a>
-        <p>{{movies.release_date | date: 'dd/MM/yyyy'}}</p>
+        <p>{{movie.release_date | date: 'dd/MM/yyyy'}}</p>
     </div>
     <div class="item">
         <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
@@ -26,6 +26,6 @@
         </ul>
     </div>
 </div>
-<div *ngIf="!movieSearching">
+<div *ngIf="!movies">
     <h1>No results <md-icon>sentiment_very_dissatisfied</md-icon></h1>
 </div>

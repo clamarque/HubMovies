@@ -16,15 +16,15 @@
                 </li>
                 <li>
                     <a routerLink="/index" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>home</md-icon> Home</a>
+                        <md-icon>today</md-icon> Now playing</a>
                 </li>
                 <li>
                     <a routerLink="/upcoming" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>skip_next</md-icon> Coming Soon</a>
+                        <md-icon>date_range</md-icon> Coming Soon</a>
                 </li>
-                <li [hidden]="!isConnected">
-                    <a routerLink="/dashboard" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>account_circle</md-icon> Profile</a>
+                <li>
+                    <a routerLink="/discover" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>explore</md-icon> Discover</a>
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/watch-later" routerLinkActive="active" (click)="end.close()">
@@ -33,6 +33,10 @@
                 <li [hidden]="!isConnected">
                     <a routerLink="/favorites" routerLinkActive="active" (click)="end.close()">
                         <md-icon>star</md-icon> The best</a>
+                </li>
+                <li [hidden]="!isConnected">
+                    <a routerLink="/profile" routerLinkActive="active" (click)="end.close()">
+                        <md-icon>account_circle</md-icon> Profile</a>
                 </li>
                 <li [hidden]="isConnected">
                     <a routerLink="/sign-in" routerLinkActive="active" (click)="end.close()">
@@ -43,7 +47,8 @@
                         <md-icon>cancel</md-icon> Sign Out</a>
                 </li>
                 <li>
-                    <a href="mailto:chabox59@gmail.com"><md-icon>bug_report</md-icon> Feedbacks</a>
+                    <a href="mailto:chabox59@gmail.com">
+                        <md-icon>bug_report</md-icon> Feedbacks</a>
                 </li>
             </ul>
         </nav>

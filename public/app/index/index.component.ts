@@ -7,7 +7,7 @@ import { DataService } from '../shared/_services/index';
     templateUrl: './app/index/index.component.html'
 })
 export class IndexComponent implements OnInit {
-    movieShowing: any[];
+    movies: any[];
     totalPages: number;
     pager: any = {}
     currentPage: number;
@@ -21,14 +21,12 @@ export class IndexComponent implements OnInit {
         this.pager = this.dataService.getPager(this.totalPages, page);
         this.currentPage = this.pager.currentPage;
         this.dataService.getNowPlaying(this.currentPage).subscribe(response => {
-            this.movieShowing = response
+            this.movies = response
         })
     }
 
     ngOnInit() {
         this.dataService.getNowPlaying(1).subscribe(response => {
-            this.movieShowing = response
-            console.log('Showing...', this.movieShowing)
             this.totalPages = response.total_pages
             this.setPage(1)
         })

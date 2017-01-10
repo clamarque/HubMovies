@@ -1,10 +1,10 @@
-<div class="items" *ngIf="movieUpcoming">
-    <div class="item" *ngFor="let movies of movieUpcoming.results">
-        <a [routerLink]="['/movie', movies.id]">
-            <img src="https://image.tmdb.org/t/p/w500/{{movies.poster_path}}" alt="poster movie" width="200">
-            <p>{{movies.title}}</p>
+<div class="items" *ngIf="movies">
+    <div class="item" *ngFor="let movie of movies.results">
+        <a [routerLink]="['/movie', movie.id]">
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie" width="200">
+            <p>{{movie.title}}</p>
         </a>
-        <p>{{movies.release_date}}</p>
+        <p>{{movie.release_date}}</p>
     </div>
     <div class="item">
         <ul *ngIf="pager.pages && pager.pages.length" class="pagination">

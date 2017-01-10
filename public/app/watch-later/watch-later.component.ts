@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap';
-import { AuthService } from '../shared/_services/index';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AuthService } from '../shared/_services/index';
 
 @Component({
     //moduleId: module.id.replace('/dist/', '/'),
@@ -18,7 +15,7 @@ export class WatchLaterComponent implements OnInit {
     baseUrl: string = 'https://www.youtube.com/embed/';
     url: any
 
-    constructor(private sanitizer: DomSanitizer, private route: ActivatedRoute, private location: Location, private authService: AuthService, private snackbar: MdSnackBar) { }
+    constructor(private sanitizer: DomSanitizer, private authService: AuthService, private snackbar: MdSnackBar) { }
 
     seeTrailer(id: string) {
         this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + id);

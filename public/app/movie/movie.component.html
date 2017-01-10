@@ -6,7 +6,7 @@
             <span *ngIf="movie.vote_average >= 5"> <md-icon class="md-green">thumb_up</md-icon> {{movie.vote_average}} | </span>
             <span *ngIf="movie.vote_average < 5"> <md-icon class="md-red">thumb_down</md-icon> {{movie.vote_average}} | </span>
             <div class="genre" *ngFor="let genre of movie.genres; let i=index">
-                <span *ngIf="i < 3">{{genre.name}},</span>
+                <span *ngIf="i < 3">{{genre.name}} </span>
             </div>
         </md-card-subtitle>
     </md-card-header>

@@ -1,3 +1,6 @@
+<div *ngIf="photoURL">
+    <img src="{{photoURL}}" alt="profile" width="150">
+</div>
 <h1>Hello {{displayName}}</h1>
 <form (ngSubmit)="onSubmit(formData)" #formData='ngForm'>
     <md-card>

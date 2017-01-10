@@ -35,6 +35,7 @@ export class ProfileComponent implements OnInit {
     });
   }
   deleteAccount() {
+    this.authService.deleteDatafromUser()
     this.authService.deleteUser((error) => {
       if (error) {
         this.error = error

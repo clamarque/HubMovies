@@ -37,12 +37,10 @@ button.md-simple-snackbar-action {
     display: inline-block;
     padding-right: 5px;
 }
-h1 {
+h1, h2, h3 {
     font-weight: 100;
 }
-h2 {
-    font-weight: 100;
-}
+
 iframe {
     width: 100%;
     max-height: 315px;
@@ -131,6 +129,13 @@ favorite-component [md-button],
 watch-later-component [md-button] {
     min-width: 50px;
 }
+sign-in-component button {
+    margin: 10px 0 !important;
+    font-weight: normal !important;
+}
+sign-in-component button img {
+    margin: 10px;
+}
 /* 
 * NAVIGATION *
 */
@@ -203,15 +208,15 @@ watch-later-component [md-button] {
         display: block !important;
         margin: 40px 0;
     }
-    sign-in-component a {
-        display: block;
-        margin-bottom: 10px;
-    }
     .pagination {
         -webkit-padding-start: 0 !important;
     }
     movie-component img {
         width: 300px;
+    }
+    sign-in-component a {
+        display: block;
+        margin-bottom: 10px;
     }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {

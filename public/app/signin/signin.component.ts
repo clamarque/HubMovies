@@ -31,6 +31,22 @@ export class SignInComponent implements OnInit {
             })
         }
     }
+    login(name: string) {
+        this.authService.signInAccount(name, (error) => {
+            if (error) {
+                this.error = error
+                this.snackbar.open(this.error, 'retry', { duration: 10000 })
+            }
+            else {
+                this.authService.readUser().subscribe(authData => {
+                    if (authData) {
+                        this.snackbar.open('Welcome ' + authData.auth.displayName + ' !', '', { duration: 5000 })
+                        this.router.navigate(['/index'])
+                    }
+                })
+            }
+        });
+    }
 
     ngOnInit() {
 

@@ -17,6 +17,22 @@ export class AuthService {
             .then(success => callback())
             .catch(error => callback(error))
     }
+    signInAccount(name: string, callback: any) {
+        return this.af.auth.login({
+            provider: this.getProvider(name),
+            method: AuthMethods.Popup,
+        })
+            .then(success => callback())
+            .catch(error => callback(error))
+    }
+
+    getProvider(name: string) {
+        switch (name) {
+            case 'google': return AuthProviders.Google;
+            case 'facebook': return AuthProviders.Facebook;
+            case 'twitter': return AuthProviders.Twitter;
+        }
+    }
 
     signOut() {
         this.af.auth.logout()
@@ -80,17 +96,18 @@ export class AuthService {
 
     setMovies(movie: any, category: string, callback: any) {
         return this.af.auth.subscribe(authData => {
-
-            this.af.database.list(category + '/' + authData.uid).push({
-                'id': movie.id,
-                'original_title': movie.original_title,
-                'overview': movie.overview,
-                'popularity': movie.popularity,
-                'release_date': movie.release_date,
-                'poster_path': movie.poster_path
-            })
-                .then(success => callback())
-                .catch(error => callback(error))
+            if (authData) {
+                this.af.database.list(category + '/' + authData.uid).push({
+                    'id': movie.id,
+                    'original_title': movie.original_title,
+                    'overview': movie.overview,
+                    'popularity': movie.popularity,
+                    'release_date': movie.release_date,
+                    'poster_path': movie.poster_path
+                })
+                    .then(success => callback())
+                    .catch(error => callback(error))
+            }
         })
     }
 
@@ -101,6 +118,17 @@ export class AuthService {
         })
         let item = this.af.database.list(category + '/' + uid)
         item.remove(id)
+    }
+
+    deleteDatafromUser() {
+        let uid
+        this.af.auth.subscribe(authData => {
+            if (authData != null) uid = authData.uid
+        })
+        let item = this.af.database.list('MovieLater/' + uid)
+        item.remove()
+        let item1 = this.af.database.list('FavoriteMovie/' + uid)
+        item1.remove()
     }
 
     readUser() {

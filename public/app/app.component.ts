@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
     constructor(private dataService: DataService, private router: Router, private af: AngularFire, private authService: AuthService, private snackbar: MdSnackBar) { }
 
     searchMovie(term: string) {
-        console.log('term:', term)
         if (term === '') {
             this.router.navigate(['/index']);
         }

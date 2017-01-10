@@ -42,14 +42,12 @@ export class MovieComponent implements OnInit {
             .switchMap((params: Params) => this.dataService.getDetailsMovie(+params['id']))
             .subscribe(response => {
                 this.movie = response
-                console.log('movie', this.movie)
             })
 
         this.route.params
             .switchMap((params: Params) => this.dataService.getVideoMovie(+params['id']))
             .subscribe(response => {
                 this.movieVideo = response
-                console.log('video', this.movieVideo)
             });
 
         return this.authService.isLoggedIn().subscribe(

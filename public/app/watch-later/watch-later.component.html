@@ -2,7 +2,7 @@
     <md-card class="item" *ngFor="let movie of movies">
         <md-card-header>
             <md-card-title>{{movie.original_title}}</md-card-title>
-            <md-card-subtitle>{{movie.release_date | date: 'dd/MM/yyyy'}}</md-card-subtitle>
+            <md-card-subtitle>{{movie.release_date | date}}</md-card-subtitle>
         </md-card-header>
         <img md-card-image src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie">
         <md-card-actions>

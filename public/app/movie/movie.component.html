@@ -2,7 +2,7 @@
     <md-card-header>
         <md-card-title>{{movie.title}}</md-card-title>
         <md-card-subtitle>
-            <md-icon>date_range</md-icon> {{movie.release_date | date: 'dd/MM/yyyy'}} |
+            <md-icon>date_range</md-icon> {{movie.release_date | date}} |
             <span *ngIf="movie.vote_average >= 5"> <md-icon class="md-green">thumb_up</md-icon> {{movie.vote_average}} | </span>
             <span *ngIf="movie.vote_average < 5"> <md-icon class="md-red">thumb_down</md-icon> {{movie.vote_average}} | </span>
             <div class="genre" *ngFor="let genre of movie.genres; let i=index">

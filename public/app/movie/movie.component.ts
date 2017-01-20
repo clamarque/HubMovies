@@ -14,10 +14,11 @@ import 'rxjs/add/operator/switchMap';
 export class MovieComponent implements OnInit {
     movie: any[];
     movieVideo: any[];
+    similarMovies: any[];
     error: string;
     isConnected: boolean = false;
     baseUrl: string = 'https://www.youtube.com/embed/';
-    url: any
+    url: any;
 
     constructor(private sanitizer: DomSanitizer, private dataService: DataService, private route: ActivatedRoute, private location: Location, private authService: AuthService, private snackbar: MdSnackBar) { }
 
@@ -38,6 +39,7 @@ export class MovieComponent implements OnInit {
     }
 
     ngOnInit() {
+
         this.route.params
             .switchMap((params: Params) => this.dataService.getDetailsMovie(+params['id']))
             .subscribe(response => {
@@ -50,6 +52,12 @@ export class MovieComponent implements OnInit {
                 this.movieVideo = response
             });
 
+        this.route.params
+            .switchMap((params: Params) => this.dataService.getSimilarMovies(+params['id']))
+            .subscribe(response => {
+                this.similarMovies = response
+            })
+
         return this.authService.isLoggedIn().subscribe(
             authStatus => {
                 if (authStatus == true) return this.isConnected = true
@@ -57,4 +65,3 @@ export class MovieComponent implements OnInit {
             })
     }
 }
-

@@ -1,0 +1,61 @@
+{
+    "common": {},
+    "menu": {
+        "search": "Search",
+        "now": "Now Playing",
+        "coming": "Coming Soon",
+        "discover": "Discover",
+        "watch": "This I Must See",
+        "best": "The best",
+        "profile": "Profile",
+        "signIn": "Sign In",
+        "signOut": "Sign Out",
+        "feed": "Feedbacks"
+    },
+    "movie": {
+        "watch": "I must see it",
+        "star": "This is one the best",
+        "trailer": "Trailer"
+    },
+    "profile": {
+        "title": "Hello",
+        "verified": "Email Verified",
+        "btn-send": "Send",
+        "subtitle": "Delete your Account ?",
+        "link": "Delete",
+        "title-over": "Are you sure ?",
+        "btn-yes": "Yes",
+        "btn-no": "No"
+    },
+    "reset": {
+        "title": "Reset your password",
+        "mail": "Email address",
+        "btn-send": "Send",
+        "link": "Cancel"
+    },
+    "search": {
+        "title": "No results"
+    },
+    "signIn": {
+        "title": "Sign in",
+        "mail": "Email address",
+        "mdp": "Password",
+        "btn-send": "Send",
+        "subtitle": "Or",
+        "btn-facebook": "Use my Facebook Account",
+        "btn-google": "Use my Google Account",
+        "btn-twitter": "Use my Twitter Account",
+        "subtitle1": "And ...",
+        "link": "If you don't have an account ?",
+        "link1": "If you forgot yout password ?"
+    },
+    "signUp": {
+        "title": "Sign up with",
+        "username": "Username",
+        "mail": "Email address",
+        "mdp": "Password",
+        "btn-send": "Send",
+        "subtitle": "Or",
+        "link": "Already have an account ?"
+    }
+}

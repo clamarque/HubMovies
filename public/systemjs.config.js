@@ -18,7 +18,7 @@
       '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/material': 'node_modules/@angular/material/material.umd.js',
+      '@angular/material': 'node_modules/@angular/material/bundles/material.umd.js',
       '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
@@ -26,7 +26,9 @@
       'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'angularfire2': 'npm:angularfire2/bundles/angularfire2.umd.js',
-      'firebase': 'npm:firebase/firebase.js'
+      'firebase': 'npm:firebase/firebase.js',
+      'ng2-translate': 'npm:ng2-translate/bundles/ng2-translate.umd.js',
+      'hammerjs': 'npm:hammerjs/hammer.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

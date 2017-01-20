@@ -3,44 +3,50 @@
         <nav class="" id="navigation" role="navigation">
             <ul class="nav">
                 <li>
-                    <md-input #search placeholder="search..." (keyup.enter)="searchMovie(search.value); search.value=''" (keyup.enter)="end.close()">
+                    <md-input #search placeholder="{{'menu.search' | translate}}" (keyup.enter)="searchMovie(search.value); search.value=''"
+                        (keyup.enter)="end.close()">
                     </md-input>
                 </li>
                 <li>
                     <a routerLink="/index" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>today</md-icon> Now playing</a>
+                        <md-icon>today</md-icon> {{'menu.now' | translate}}</a>
                 </li>
                 <li>
                     <a routerLink="/upcoming" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>date_range</md-icon> Coming Soon</a>
+                        <md-icon>date_range</md-icon> {{'menu.coming' | translate}}</a>
                 </li>
                 <li>
                     <a routerLink="/discover" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>explore</md-icon> Discover</a>
+                        <md-icon>explore</md-icon> {{'menu.discover' | translate}}</a>
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/watch-later" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>watch_later</md-icon> This I Must See</a>
+                        <md-icon>watch_later</md-icon> {{'menu.watch' | translate}}</a>
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/favorites" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>star</md-icon> The best</a>
+                        <md-icon>star</md-icon> {{'menu.best' | translate}}</a>
                 </li>
                 <li [hidden]="!isConnected">
                     <a routerLink="/profile" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>account_circle</md-icon> Profile</a>
+                        <md-icon>account_circle</md-icon> {{'menu.profile' | translate}}</a>
                 </li>
                 <li [hidden]="isConnected">
                     <a routerLink="/sign-in" routerLinkActive="active" (click)="end.close()">
-                        <md-icon>account_circle</md-icon> Sign In</a>
+                        <md-icon>account_circle</md-icon> {{'menu.signIn' | translate}}</a>
                 </li>
                 <li [hidden]="!isConnected">
                     <a (click)="end.close()" (click)="onSignOut()">
-                        <md-icon>cancel</md-icon> Sign Out</a>
+                        <md-icon>cancel</md-icon> {{'menu.signOut' | translate}}</a>
                 </li>
                 <li>
                     <a href="mailto:chabox59@gmail.com">
-                        <md-icon>bug_report</md-icon> Feedbacks</a>
+                        <md-icon>bug_report</md-icon> {{'menu.feed' | translate}}</a>
+                </li>
+                <li>
+                    <md-slide-toggle [color]="color" [(ngModel)]="language" (change)="changeLanguage(language)">
+                        EN
+                    </md-slide-toggle>
                 </li>
             </ul>
         </nav>

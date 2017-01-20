@@ -16,8 +16,8 @@
     </md-card-content>
     <md-card-actions>
         <div [hidden]="!isConnected">
-            <button md-button (click)="saveMovie(movie, 'MovieLater')"><md-icon class="md-teal">watch_later</md-icon> I must see it</button>
-            <button md-button (click)="saveMovie(movie, 'FavoriteMovie')"><md-icon class="md-yellow">star</md-icon> This is one the best</button>
+            <button md-button (click)="saveMovie(movie, 'MovieLater')"><md-icon class="md-teal">watch_later</md-icon> {{'movie.watch' | translate}}</button>
+            <button md-button (click)="saveMovie(movie, 'FavoriteMovie')"><md-icon class="md-yellow">star</md-icon> {{'movie.star' | translate}}</button>
         </div>
     </md-card-actions>
 </md-card>
@@ -28,6 +28,17 @@
             <iframe [src]="url" allowfullscreen></iframe>
         </div>
         <a (click)="seeTrailer(movies.key)">
-            <md-icon>local_movies</md-icon>Trailer {{i + 1}}</a>
+            <md-icon>local_movies</md-icon>{{'movie.trailer' | translate}} {{i + 1}}</a>
     </div>
 </md-card>
+<h1>Recommended Movies</h1>
+<div class="items" *ngIf="similarMovies">
+    <div class="item" *ngFor="let movie of similarMovies.results; let i=index">
+        <div *ngIf=" i < 12">
+            <a [routerLink]="['/movie', movie.id]">
+                <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie" width="200">
+                <img *ngIf="!movie.poster_path" src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg" alt="No poster available" width="200">
+                <p>{{movie.title}}</p>
+            </a>
+        </div>
+    </div>

@@ -6,8 +6,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AngularFireModule, FIREBASE_PROVIDERS, AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
+import 'hammerjs';
 
-import { KeysPipe, ObjectToArrayPipe } from './shared/_pipes/index';
 import { AuthGuard, AuthService } from './shared/_services/index'
 
 import { AppComponent } from './app.component';
@@ -25,6 +25,7 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { WatchLaterComponent } from './watch-later/watch-later.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { TranslateModule } from 'ng2-translate';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyAV6yhUmJWeYYgJIH2_Op8VgTMa1JX9mI4",
@@ -47,6 +48,7 @@ export const firebaseAuthConfig = {
         MaterialModule.forRoot(),
         AppRoutingModule,
         AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+        TranslateModule.forRoot()
     ],
     declarations: [
         AppComponent,
@@ -62,12 +64,9 @@ export const firebaseAuthConfig = {
         SignUpComponent,
         UpcomingComponent,
         WatchLaterComponent,
-        ObjectToArrayPipe,
-        KeysPipe
     ],
     providers: [AuthGuard, AuthService],
     bootstrap: [AppComponent],
-    exports: [ObjectToArrayPipe, KeysPipe],
     entryComponents: [
         DialogDeleteUser
     ]

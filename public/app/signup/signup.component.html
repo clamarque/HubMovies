@@ -1,14 +1,11 @@
-<h1>Sign up with</h1>
+<h1>{{'signUp.title' | translate}}</h1>
 <form (ngSubmit)="onSubmit(formData)" #formData='ngForm'>
     <md-card>
-        <md-input type="text" name="username" (ngModel)="username" placeholder="username" required></md-input>
-        <md-input type="email" name="email" (ngModel)="email" placeholder="email@address.com" required></md-input>
-        <md-input type="password" name="password" (ngModel)="password" placeholder="Password" required></md-input>
-        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">Submit</button>
+        <md-input type="text" name="username" (ngModel)="username" placeholder="{{'signUp.username' | translate}}" required></md-input>
+        <md-input type="email" name="email" (ngModel)="email" placeholder="{{'signUp.mail' | translate}}" required></md-input>
+        <md-input type="password" name="password" (ngModel)="password" placeholder="{{'signUp.mdp' | translate}}" required></md-input>
+        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">{{'signUp.btn-send' | translate}}</button>
     </md-card>
 </form>
-<div class="callout alert" *ngIf="error">
-    {{ error }}
-</div>
-<h2>Or</h2>
-<a routerLink="/sign-in">Already have an account?</a>
+<h2>{{'signUp.subtitle' | translate}}</h2>
+<a routerLink="/sign-in">{{'signUp.link' | translate}}</a>

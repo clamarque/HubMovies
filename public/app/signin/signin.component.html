@@ -1,21 +1,21 @@
-<h1> Sign in with</h1>
+<h1>{{'signIn.title' | translate}}</h1>
 <form (ngSubmit)="onSubmit(formData)" #formData='ngForm'>
     <md-card>
-        <md-input type="email" name="email" (ngModel)="email" placeholder="email@address.com" required></md-input>
-        <md-input type="password" name="password" (ngModel)="password" placeholder="Password" required></md-input>
-        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">Submit</button>
+        <md-input type="email" name="email" (ngModel)="email" placeholder="{{'signIn.mail' | translate}}" required></md-input>
+        <md-input type="password" name="password" (ngModel)="password" placeholder="{{'signIn.mdp' | translate}}" required></md-input>
+        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">{{'signIn.btn-send' | translate}}</button>
     </md-card>
 </form>
-<h2>Or</h2>
+<h2>{{'signIn.subtitle' | translate}}</h2>
 <button md-raised-button (click)="login('facebook')">
-    <img src="https://firebasestorage.googleapis.com/v0/b/hubmovies-a26fc.appspot.com/o/facebook-logo.png?alt=media&token=8fa7710c-7a4f-477f-abe9-d4f3f7e79b0c" width="30"> Use my Facebook Account
+    <img src="https://firebasestorage.googleapis.com/v0/b/hubmovies-a26fc.appspot.com/o/facebook-logo.png?alt=media&token=8fa7710c-7a4f-477f-abe9-d4f3f7e79b0c" width="30"> {{'signIn.btn-facebook' | translate}}
 </button>
 <button md-raised-button (click)="login('google')">
-    <img src="https://firebasestorage.googleapis.com/v0/b/hubmovies-a26fc.appspot.com/o/google-logo.png?alt=media&token=2ef1937b-a492-4f18-9c46-75178c59d012" width="30"> Use my Google Account
+    <img src="https://firebasestorage.googleapis.com/v0/b/hubmovies-a26fc.appspot.com/o/google-logo.png?alt=media&token=2ef1937b-a492-4f18-9c46-75178c59d012" width="30"> {{'signIn.btn-google' | translate}}
 </button>
 <button md-raised-button (click)="login('twitter')">
-    <img src="https://firebasestorage.googleapis.com/v0/b/hubmovies-a26fc.appspot.com/o/twitter-logo.png?alt=media&token=ae5ba3f0-1bb9-4746-a52c-bbb5d0325987" width="30"> Use my Twitter Account
+    <img src="https://firebasestorage.googleapis.com/v0/b/hubmovies-a26fc.appspot.com/o/twitter-logo.png?alt=media&token=ae5ba3f0-1bb9-4746-a52c-bbb5d0325987" width="30"> {{'signIn.btn-twitter' | translate}}
 </button>
-<h3>And ...</h3>
-<a routerLink="/sign-up">If you don't have an account ?</a>
-<a routerLink="/reset-password">If you forgot yout password ?</a>
+<h3>{{'signIn.subtitle1' | translate}}</h3>
+<a routerLink="/sign-up">{{'signIn.link' | translate}}</a>
+<a routerLink="/reset-password">{{'signIn.link1' | translate}}</a>

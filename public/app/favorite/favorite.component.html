@@ -4,10 +4,11 @@
             <md-card-title>{{movie.original_title}}</md-card-title>
             <md-card-subtitle>{{movie.release_date | date}}</md-card-subtitle>
         </md-card-header>
-        <img md-card-image src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie">
+        <img *ngIf="movie.poster_path" md-card-image src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster movie">
+        <img *ngIf="!movie.poster_path" md-card-image src="http://ddbu.billiardport.com/img/posters/no_poster_available.jpg" alt="No poster available">
         <md-card-actions>
             <a [routerLink]="['/movie', movie.id]"><md-icon>visibility</md-icon></a>
-            <button md-button><md-icon>share</md-icon></button>
+            <!--<button md-button><md-icon>share</md-icon></button>-->
             <button md-button (click)="deleteMovie(movie.$key)"><md-icon>delete</md-icon></button>
         </md-card-actions>
     </md-card>

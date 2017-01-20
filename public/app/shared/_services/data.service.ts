@@ -3,8 +3,6 @@ import { Observable } from 'rxjs/Observable';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-//import { List } from '../list.interface';
-
 @Injectable()
 export class DataService {
     //private url = 'http://api.allocine.fr/rest/v3/';
@@ -16,7 +14,7 @@ export class DataService {
     constructor(private http: Http) { }
 
     getSearchMovie(name: string, page: number) {
-        return this.http.get(this.url + 'search/movie?api_key=' + this.partner + '&language=fr-FR&query=' + name + '&page=' + page)
+        return this.http.get(this.url + 'search/movie?api_key=' + this.partner + '&language=fr' + '&query=' + name + '&page=' + page)
             .map(res => res.json())
     }
 
@@ -27,7 +25,7 @@ export class DataService {
 
 
     getDetailsMovie(code: number) {
-        return this.http.get(this.url + 'movie/' + code + '?api_key=' + this.partner + '&language=fr-FR')
+        return this.http.get(this.url + 'movie/' + code + '?api_key=' + this.partner + '&language=fr')
             .map((res: Response) => res.json())
     }
     getMovieDiscover(page: number) {
@@ -37,6 +35,10 @@ export class DataService {
 
     getVideoMovie(code: number) {
         return this.http.get(this.url + 'movie/' + code + '/videos?api_key=' + this.partner + '&language=fr-FR')
+            .map((res: Response) => res.json())
+    }
+    getSimilarMovies(code: number) {
+        return this.http.get(this.url + 'movie/' + code + '/similar?api_key=' + this.partner + '&language=fr')
             .map((res: Response) => res.json())
     }
 

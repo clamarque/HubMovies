@@ -9,8 +9,13 @@ export class AuthService {
 
     authState: FirebaseAuthState
     redirectUrl: string;
+    uid: string = '';
 
-    constructor(private af: AngularFire, private router: Router) { }
+    constructor(private af: AngularFire, private router: Router) {
+        this.af.auth.subscribe(auth => {
+            if (auth) this.uid = auth.uid
+        })
+    }
 
     signIn(email: string, password: string, callback: any) {
         return this.af.auth.login({ email: email, password: password })
@@ -57,77 +62,31 @@ export class AuthService {
     }
 
     getMovies(category: string) {
-        let uid
-        this.af.auth.subscribe(authData => {
-            if (authData != null) uid = authData.uid
-        })
-        return this.af.database.list(category + '/' + uid)
-    }
-    setMovie(movie: any, category: string, callback: any) {
-        let uid
-        this.af.auth.subscribe(authData => {
-            if (authData != null) uid = authData.uid
-        })
-        const list = this.af.database.list(category + '/' + uid)
-        list.subscribe(data => {
-            console.log(data)
-            for (let index = 0; index < 1; index++) {
-                for (let entry in data) {
-                    console.log('data:', data[entry].id)
-                    if (data[entry].id == movie.id) {
-                        console.log('movie in db')
-                    } else {
-                        console.log('movie not in db')
-                        this.af.database.list(category + '/' + uid).push({
-                            'id': movie.id,
-                            'original_title': movie.original_title,
-                            'overview': movie.overview,
-                            'popularity': movie.popularity,
-                            'release_date': movie.release_date,
-                            'poster_path': movie.poster_path
-                        })
-                        index = 1
-                    }
-                }
-            }
-        })
-
+        return this.af.database.list(category + '/' + this.uid)
     }
 
     setMovies(movie: any, category: string, callback: any) {
-        return this.af.auth.subscribe(authData => {
-            if (authData) {
-                this.af.database.list(category + '/' + authData.uid).push({
-                    'id': movie.id,
-                    'original_title': movie.original_title,
-                    'overview': movie.overview,
-                    'popularity': movie.popularity,
-                    'release_date': movie.release_date,
-                    'poster_path': movie.poster_path
-                })
-                    .then(success => callback())
-                    .catch(error => callback(error))
-            }
+        return this.af.database.list(category + '/' + this.uid).push({
+            'id': movie.id,
+            'original_title': movie.original_title,
+            'overview': movie.overview,
+            'popularity': movie.popularity,
+            'release_date': movie.release_date,
+            'poster_path': movie.poster_path
         })
+            .then(success => callback())
+            .catch(error => callback(error))
     }
 
     deleteMovies(category: string, id: string) {
-        let uid
-        this.af.auth.subscribe(authData => {
-            if (authData != null) uid = authData.uid
-        })
-        let item = this.af.database.list(category + '/' + uid)
+        let item = this.af.database.list(category + '/' + this.uid)
         item.remove(id)
     }
 
     deleteDatafromUser() {
-        let uid
-        this.af.auth.subscribe(authData => {
-            if (authData != null) uid = authData.uid
-        })
-        let item = this.af.database.list('MovieLater/' + uid)
+        let item = this.af.database.list('MovieLater/' + this.uid)
         item.remove()
-        let item1 = this.af.database.list('FavoriteMovie/' + uid)
+        let item1 = this.af.database.list('FavoriteMovie/' + this.uid)
         item1.remove()
     }
 
@@ -161,5 +120,4 @@ export class AuthService {
             else return true
         });
     }
-
 }

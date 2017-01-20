@@ -1,16 +1,16 @@
 <div *ngIf="photoURL">
     <img src="{{photoURL}}" alt="profile" width="150">
 </div>
-<h1>Hello {{displayName}}</h1>
+<h1>{{'profile.title' | translate}} {{displayName}}</h1>
 <form (ngSubmit)="onSubmit(formData)" #formData='ngForm'>
     <md-card>
         <md-input type="text" name="displayName" [(ngModel)]="displayName" required></md-input>
         <md-input type="email" name="email" [(ngModel)]="email" required></md-input>
         <md-checkbox type="checkbox" name="emailVerified" [(ngModel)]="emailVerified" disabled>
-            <label>Email Verified</label>
+            <label>{{'profile.verified' | translate}}</label>
         </md-checkbox>
-        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">Submit</button>
+        <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">{{'profile.btn-send' | translate}}</button>
     </md-card>
 </form>
-<h2>Delete your Account ?</h2>
-<a (click)="confirmDialog()">Delete</a>
+<h2>{{'profile.subtitle' | translate}}</h2>
+<a (click)="confirmDialog()">{{'profile.link' | translate}}</a>

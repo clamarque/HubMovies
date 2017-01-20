@@ -77,9 +77,9 @@ export class ProfileComponent implements OnInit {
 @Component({
   selector: 'dialog-delete-user',
   template: ` 
-  <h1 md-dialog-title>Are you sure ?</h1>
-    <button md-raised-button color="primary" (click)="dialogRef.close('yes')">Yes</button>
-    <button md-raised-button color="primary" md-dialog-close (click)="dialogRef.close('no')">No</button>
+  <h1 md-dialog-title>{{'profile.title-over' | translate}}</h1>
+    <button md-raised-button color="primary" (click)="dialogRef.close('yes')">{{'profile.btn-yes' | translate}}</button>
+    <button md-raised-button color="primary" md-dialog-close (click)="dialogRef.close('no')">{{'profile.btn-no' | translate}}</button>
  `
 })
 

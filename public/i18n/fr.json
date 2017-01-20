@@ -1,0 +1,61 @@
+{
+    "common": {},
+    "menu": {
+        "search": "Rechercher",
+        "now": "En ce moment",
+        "coming": "Prochainement",
+        "discover": "Découvrir",
+        "watch": "Ce que je dois voir",
+        "best": "Le meilleur",
+        "profile": "Profil",
+        "signIn": "Se connecter",
+        "signOut": "Se déconnecter",
+        "feed": "Commentaires"
+    },
+    "movie": {
+        "watch": "Je dois le voir",
+        "star": "C'est l'un des meilleurs",
+        "trailer": "Bande annonce"
+    },
+    "profile": {
+        "title": "Bienvenue",
+        "verified": "Email vérifié",
+        "btn-send": "Envoyer",
+        "subtitle": "Supprimer votre compte ?",
+        "link": "Supprimer",
+        "title-over": "Êtes-vous sûr ?",
+        "btn-yes": "Oui",
+        "btn-no": "Non"
+    },
+    "reset": {
+        "title": "Réinitialisez votre mot de passe",
+        "mail": "Adresse email",
+        "btn-send": "Envoyer",
+        "link": "Annuler"
+    },
+    "search": {
+        "title": "Pas de réultats"
+    },
+    "signIn": {
+        "title": "Se connecter avec",
+        "mail": "Adresse email",
+        "mdp": "Mot de passe",
+        "btn-send": "Envoyer",
+        "subtitle": "Ou",
+        "btn-facebook": "Utiliser mon compte Facebook",
+        "btn-google": "Utiliser mon compte Google",
+        "btn-twitter": "Utiliser mon compte Twitter",
+        "subtitle1": "Et ...",
+        "link": "Si vous n'avez pas encore de compte ?",
+        "link1": "Si vous avez oublié votre mot de passe ?"
+    },
+    "signUp": {
+        "title": "S'enregistrer",
+        "username": "Nom d'utilisateur",
+        "mail": "Adresse email",
+        "mdp": "Mot de passe",
+        "btn-send": "Envoyer",
+        "subtitle": "Ou",
+        "link": "Déjà un compte ?"
+    }
+}

@@ -15,7 +15,8 @@
     "movie": {
         "watch": "I must see it",
         "star": "This is one the best",
-        "trailer": "Trailer"
+        "trailer": "Trailer",
+        "title": "Recommended movies"
     },
     "profile": {
         "title": "Hello",

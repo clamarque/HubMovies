@@ -31,7 +31,7 @@
             <md-icon>local_movies</md-icon>{{'movie.trailer' | translate}} {{i + 1}}</a>
     </div>
 </md-card>
-<h1>Recommended Movies</h1>
+<h1>{{'movie.title' | translate}}</h1>
 <div class="items" *ngIf="similarMovies">
     <div class="item" *ngFor="let movie of similarMovies.results; let i=index">
         <div *ngIf=" i < 12">

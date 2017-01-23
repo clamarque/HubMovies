@@ -15,7 +15,8 @@
     "movie": {
         "watch": "Je dois le voir",
         "star": "C'est l'un des meilleurs",
-        "trailer": "Bande annonce"
+        "trailer": "Bande annonce",
+        "title": "Films recommandés"
     },
     "profile": {
         "title": "Bienvenue",

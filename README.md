@@ -6,7 +6,7 @@ This platform is still developing.
 <img src="https://github.com/clamarque/HubMovies/blob/master/img/demo.PNG" width="750" height="400">
 </p>
 
-##Quick Start
+## Quick Start
 
 `$ git clone https://github.com/clamarque/HubMovies.git`
 
@@ -16,7 +16,7 @@ This platform is still developing.
 
 `$ npm start`
 
-##Stack
+## Stack
 
 - "@angular/": "^2.2.4",
 - @angular/material": "^2.0.0-alpha.11-3",
@@ -24,6 +24,6 @@ This platform is still developing.
 - "firebase": "^3.6.4",
 - Typescript
 
-##Who wants to help me?
+## Who wants to help me?
 
 Want to file a bug, contribute some code, suggest ideas or improve documentation? don't hesitate! Send me a mail on: chabox59@gmail.com

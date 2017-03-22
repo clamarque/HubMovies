@@ -135,11 +135,11 @@ md-card-content {
     color: #009688;
 }
 
-md-icon {
+.mat-icon {
     vertical-align: middle;
 }
 
-md-input {
+md-input-container {
     margin-right: 15px;
 }
 
@@ -214,8 +214,9 @@ sign-in-component button img {
     line-height: 48px;
 }
 
-#navigation ul > li md-input {
+#navigation ul > li md-input-container {
     padding: 0 0 0 8px;
+    margin-top: 25px;
 }
 
 #navigation ul > li:hover {
@@ -269,6 +270,9 @@ sign-in-component button img {
     color: #999;
 }
 
+.mat-dialog-container {
+    height: 200px !important;
+}
 
 /*
 * RESPONSIVE *
@@ -276,7 +280,7 @@ sign-in-component button img {
 
 @media screen and (max-width: 480px) {
     md-checkbox,
-    md-input {
+    md-input-container {
         display: block !important;
         margin: 40px 0;
     }

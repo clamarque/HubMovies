@@ -66,16 +66,25 @@ export class AuthService {
     }
 
     setMovies(movie: any, category: string, callback: any) {
-        return this.af.database.list(category + '/' + this.uid).push({
-            'id': movie.id,
-            'original_title': movie.original_title,
-            'overview': movie.overview,
-            'popularity': movie.popularity,
-            'release_date': movie.release_date,
-            'poster_path': movie.poster_path
+        return this.af.database.list(category + '/' + this.uid).subscribe(data => {
+            let exists = false
+            for (let x of data) {
+                if (x.id == movie.id) exists = true
+                callback('The movie is already recorded')
+            }
+            if (exists == false) {
+                return this.af.database.list(category + '/' + this.uid).push({
+                    'id': movie.id,
+                    'original_title': movie.original_title,
+                    'overview': movie.overview,
+                    'popularity': movie.popularity,
+                    'release_date': movie.release_date,
+                    'poster_path': movie.poster_path
+                })
+                    .then(success => callback())
+                    .catch(error => callback(error))
+            }
         })
-            .then(success => callback())
-            .catch(error => callback(error))
     }
 
     deleteMovies(category: string, id: string) {

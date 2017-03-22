@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
     this.authService.deleteUser((error) => {
       if (error) {
         this.error = error
-        this.snackbar.open(this.error, 'retry', { duration: 10000 })
+        this.snackbar.open(this.error, 'hide', { duration: 10000 })
       }
       else {
         this.snackbar.open('Good bye ! We hope that our site has pleased you.', '', { duration: 5000 })
@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
       this.authService.updateUser(formData, (error) => {
         if (error) {
           this.error = error
-          this.snackbar.open(this.error, 'retry', { duration: 10000 })
+          this.snackbar.open(this.error, 'hide', { duration: 10000 })
         }
         else {
           this.snackbar.open('Success ! Your modifications was been applicated', '', { duration: 5000 })

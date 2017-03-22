@@ -1,11 +1,12 @@
-<md-sidenav-layout>
+<md-sidenav-container>
     <md-sidenav #end align="start" mode="push">
         <nav class="" id="navigation" role="navigation">
             <ul class="nav">
                 <li>
-                    <md-input #search placeholder="{{'menu.search' | translate}}" (keyup.enter)="searchMovie(search.value); search.value=''"
-                        (keyup.enter)="end.close()">
-                    </md-input>
+                    <md-input-container>
+                        <input mdInput #search placeholder="{{'menu.search' | translate}}" (keyup.enter)="searchMovie(search.value); search.value=''"
+                            (keyup.enter)="end.close()">
+                    </md-input-container>
                 </li>
                 <li>
                     <a routerLink="/index" routerLinkActive="active" (click)="end.close()">
@@ -57,4 +58,4 @@
     <div class="app-content">
         <router-outlet></router-outlet>
     </div>
-</md-sidenav-layout>
+</md-sidenav-container>

@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
             this.authService.signUp(formData, (error) => {
                 if (error) {
                     this.error = error
-                    this.snackbar.open(this.error, 'retry', { duration: 10000 })
+                    this.snackbar.open(this.error, 'hide', { duration: 10000 })
                 }
                 else {
                     this.authService.readUser().subscribe(authData => {

@@ -26,7 +26,7 @@ export class MovieComponent implements OnInit {
         this.authService.setMovies(movie, category, (error) => {
             if (error) {
                 this.error = error
-                this.snackbar.open(this.error, 'retry', { duration: 10000 })
+                this.snackbar.open(this.error, 'hide', { duration: 10000 })
             }
             else {
                 this.snackbar.open('Your movie was been save', '', { duration: 5000 })

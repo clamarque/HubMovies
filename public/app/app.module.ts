@@ -45,7 +45,7 @@ export const firebaseAuthConfig = {
         BrowserModule,
         FormsModule,
         HttpModule,
-        MaterialModule.forRoot(),
+        MaterialModule,
         AppRoutingModule,
         AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
         TranslateModule.forRoot()

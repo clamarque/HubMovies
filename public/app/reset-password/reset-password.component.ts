@@ -18,7 +18,7 @@ export class ResetPasswordComponent implements OnInit {
             this.authService.resetPasswordEmail(formData.value.email, (error) => {
                 if (error) {
                     this.error = error
-                    this.snackbar.open(this.error, 'retry', { duration: 10000 })
+                    this.snackbar.open(this.error, 'hide', { duration: 10000 })
                 }
                 else {
                     this.snackbar.open('Email sent', '', { duration: 5000 })

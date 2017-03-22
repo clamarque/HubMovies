@@ -1,9 +1,15 @@
 <h1>{{'signUp.title' | translate}}</h1>
 <form (ngSubmit)="onSubmit(formData)" #formData='ngForm'>
     <md-card>
-        <md-input type="text" name="username" (ngModel)="username" placeholder="{{'signUp.username' | translate}}" required></md-input>
-        <md-input type="email" name="email" (ngModel)="email" placeholder="{{'signUp.mail' | translate}}" required></md-input>
-        <md-input type="password" name="password" (ngModel)="password" placeholder="{{'signUp.mdp' | translate}}" required></md-input>
+        <md-input-container>
+            <input mdInput type="text" name="username" (ngModel)="username" placeholder="{{'signUp.username' | translate}}" required>
+        </md-input-container>
+        <md-input-container>
+            <input mdInput type="email" name="email" (ngModel)="email" placeholder="{{'signUp.mail' | translate}}" required>
+        </md-input-container>
+        <md-input-container>
+            <input mdInput type="password" name="password" (ngModel)="password" placeholder="{{'signUp.mdp' | translate}}" required>
+        </md-input-container>
         <button md-raised-button color="primary" type="submit" [disabled]="!formData.valid">{{'signUp.btn-send' | translate}}</button>
     </md-card>
 </form>

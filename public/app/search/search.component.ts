@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
                 if(data.total_results > 0) this.movies = data
                 else {
                     this.movies == null
-                    this.snackbar.open('No results found', 'retry', { duration: 10000 })
+                    this.snackbar.open('No results found', 'hide', { duration: 10000 })
                 } 
             })
     }

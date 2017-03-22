@@ -18,7 +18,7 @@ export class SignInComponent implements OnInit {
             this.authService.signIn(formData.value.email, formData.value.password, (error) => {
                 if (error) {
                     this.error = error
-                    this.snackbar.open(this.error, 'retry', { duration: 10000 })
+                    this.snackbar.open(this.error, 'hide', { duration: 10000 })
                 }
                 else {
                     this.authService.readUser().subscribe(authData => {
@@ -35,7 +35,7 @@ export class SignInComponent implements OnInit {
         this.authService.signInAccount(name, (error) => {
             if (error) {
                 this.error = error
-                this.snackbar.open(this.error, 'retry', { duration: 10000 })
+                this.snackbar.open(this.error, 'hide', { duration: 10000 })
             }
             else {
                 this.authService.readUser().subscribe(authData => {

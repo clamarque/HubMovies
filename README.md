@@ -19,7 +19,7 @@ This platform is still developing.
 ## Stack
 
 - "@angular/": "^2.2.4",
-- @angular/material": "^2.0.0-alpha.11-3",
+- "@angular/material": "^2.0.0-beta.2,
 - "angularfire2": "^2.0.0-beta.6",
 - "firebase": "^3.6.4",
 - Typescript

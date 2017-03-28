@@ -1,15 +1,13 @@
 body {
-    font-size: 14px;
     font-family: 'Roboto', sans-serif;
-    background: #3F4C58;
-    color: #FFF;
-    margin: 0;
-    padding: 0;
+    font-size: 14px;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background: #3f4c58;
 }
-
-
 /*
 * COMMON *
 */
@@ -18,178 +16,147 @@ body {
     padding: 20px;
     text-align: center;
 }
-
 a {
-    color: rgb(255, 87, 34);
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
+    color: rgb(255, 87, 34);
 }
-
 button.app-icon-button {
-    background: transparent;
-    border: none;
     padding: 20px;
     cursor: pointer;
+    color: #fff;
+    border: none;
     outline: none;
-    color: #FFF;
+    background: transparent;
 }
-
 button.md-simple-snackbar-action {
     color: #00796b !important;
 }
-
 .genre {
     display: inline-block;
     padding-right: 5px;
 }
-
 h1,
 h2,
 h3 {
     font-weight: 100;
 }
-
 iframe {
     width: 100%;
     max-height: 315px;
 }
-
 input:-webkit-autofill {
     -webkit-box-shadow: inset 0 3em 0 0 #424242;
-    -webkit-text-fill-color: #FFF !important;
+    -webkit-text-fill-color: #fff !important;
 }
-
 .items {
     display: flex;
+    margin-top: -10px;
+    margin-left: -10px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: -10px;
-    margin-top: -10px;
 }
-
 .items .item {
-    flex: 1 0 200px;
-    /*box-sizing: border-box;*/
-    padding: 10px;
-    margin-left: 10px;
     margin-top: 10px;
+    margin-left: 10px;
+    /*box-sizing: border-box;*/
+    
+    padding: 10px;
+    flex: 1 0 200px;
 }
-
 discover-component .items .item.item:last-child,
 upcoming-component .items .item.item:last-child,
 index-component .items .item:last-child,
 search-component .items .item:last-child {
-    margin: 0;
     width: 100%;
     max-width: 100%;
+    margin: 0;
     flex: inherit;
 }
-
 .launcher {
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    height: 100%
 }
-
 md-card > md-card-actions:last-child {
     margin-bottom: 0 !important;
 }
-
 md-card {
     margin: 10px 0;
 }
-
 md-card-title,
 md-card-content {
     text-align: left;
 }
-
 [md-card-image] {
     width: calc(100% + 20px) !important;
 }
-
 .md-movies {
     font-size: 32px;
     vertical-align: middle;
 }
-
 .md-green {
-    color: #4CAF50;
+    color: #4caf50;
 }
-
 .md-orange {
-    color: rgb(255, 87, 34)
+    color: rgb(255, 87, 34);
 }
-
 .md-red {
-    color: #F44336;
+    color: #f44336;
 }
-
 .md-yellow {
-    color: #FFC107;
+    color: #ffc107;
 }
-
 .md-teal {
     color: #009688;
 }
-
 .mat-icon {
     vertical-align: middle;
 }
-
 md-input-container {
     margin-right: 15px;
 }
-
 md-slide-toggle {
     padding: 8px 24px;
 }
-
 md-slide-toggle input {
-    border: 0;
+    position: absolute;
+    overflow: hidden;
     clip: rect(0 0 0 0);
+    width: 1px;
     height: 1px;
     margin: -1px;
-    overflow: hidden;
     padding: 0;
-    position: absolute;
     text-transform: none;
-    width: 1px;
+    border: 0;
 }
-
 movie-component img {
-    margin: 30px 0;
     width: 100%;
+    margin: 30px 0;
 }
 movie-component .item img {
-    margin: 0;
     width: 100%;
+    margin: 0;
 }
 movie-component md-icon {
     vertical-align: bottom;
 }
-
 ul li {
     list-style-type: none;
 }
-
 favorite-component [md-button],
 watch-later-component [md-button] {
     min-width: 50px;
 }
-
 sign-in-component button {
-    margin: 10px 0 !important;
     font-weight: normal !important;
+    margin: 10px 0 !important;
 }
-
 sign-in-component button img {
     margin: 10px;
 }
-
-
 /* 
 * NAVIGATION *
 */
@@ -200,80 +167,66 @@ sign-in-component button img {
     list-style: none;
     text-align: left;
 }
-
 #navigation ul > li:first-child:hover {
     background: transparent !important;
 }
-
 #navigation ul > li:last-child:hover {
     background: transparent !important;
 }
-
 #navigation ul > li {
-    min-height: 48px;
     line-height: 48px;
+    min-height: 48px;
 }
-
 #navigation ul > li md-input-container {
-    padding: 0 0 0 8px;
     margin-top: 25px;
+    padding: 0 0 0 8px;
 }
-
 #navigation ul > li:hover {
-    background: #EEEEEE;
+    background: #eee;
 }
-
 #navigation ul > li > a {
+    font-weight: 500;
     display: block;
     padding: 8px 24px;
     color: #00796b;
-    font-weight: 500;
 }
-
 #navigation ul > li > a > span {
     margin-left: 24px;
 }
-
-
 /*
 * Pagination *
 */
 
 .pagination {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
-
 .pagination li {
     display: inline-block;
+    height: 30px;
     text-align: center;
     vertical-align: top;
-    height: 30px;
 }
-
 .pagination li.disabled a {
-    pointer-events: none;
     cursor: default;
+    pointer-events: none;
     color: #444;
 }
-
 .pagination li a {
-    color: #00796b;
-    display: inline-block;
     font-size: 1.2rem;
+    display: inline-block;
     padding: 0 10px;
     /*line-height: 30px;*/
+    
     cursor: pointer;
+    color: #00796b;
 }
-
 .disabled {
     color: #999;
 }
-
 .mat-dialog-container {
     height: 200px !important;
 }
-
 /*
 * RESPONSIVE *
 */
@@ -292,12 +245,7 @@ sign-in-component button img {
         margin-bottom: 10px;
     }
 }
-
-@media screen and (max-width: 768px) {
-
-}
-
-
+@media screen and (max-width: 768px) {}
 /** Pagination **/
 
 @media (min-width: 410px) {
@@ -305,37 +253,31 @@ sign-in-component button img {
         max-width: calc(50% - 10px);
     }
 }
-
 @media (min-width: 620px) {
     .items .item {
         max-width: calc(33.33333% - 10px);
     }
 }
-
 @media (min-width: 830px) {
     .items .item {
         max-width: calc(25% - 10px);
     }
 }
-
 @media (min-width: 1040px) {
     .items .item {
         max-width: calc(20% - 10px);
     }
 }
-
 @media (min-width: 1250px) {
     .items .item {
         max-width: calc(16.66667% - 10px);
     }
 }
-
 @media (min-width: 1460px) {
     .items .item {
         max-width: calc(14.28571% - 10px);
     }
 }
-
 @media (min-width: 1670px) {
     .items .item {
         min-width: calc(12.5% - 10px);

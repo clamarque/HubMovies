@@ -26,7 +26,7 @@
       'rxjs': 'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'angularfire2': 'npm:angularfire2/bundles/angularfire2.umd.js',
-      'firebase': 'npm:firebase/firebase.js',
+      'firebase': 'npm:firebase',
       'ng2-translate': 'npm:ng2-translate/bundles/ng2-translate.umd.js',
       'hammerjs': 'npm:hammerjs/hammer.js'
     },
@@ -37,6 +37,10 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      firebase: {
+        main: './firebase-browser.js',
         defaultExtension: 'js'
       }
     }

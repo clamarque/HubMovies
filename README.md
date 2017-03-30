@@ -3,7 +3,7 @@
 This platform is still developing.
 
 <p align="center">
-<img src="https://github.com/clamarque/HubMovies/blob/master/img/demo.PNG" width="750" height="400">
+<img src="https://github.com/clamarque/HubMovies/blob/master/assets/images/demo.PNG" width="750" height="400">
 </p>
 
 ## Quick Start

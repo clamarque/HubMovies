@@ -16,6 +16,12 @@ This platform is still developing.
 
 `$ npm start`
 
+### How update the theme
+
+By default, the theme is a custom theme. For generate a new theme (based on material theme) you need use the command:  
+<code>$node-sass your_theme.scss your_theme.css</code>.  
+You can find more details [here](https://github.com/angular/material2/blob/master/guides/theming.md)
+
 ## Stack
 
 - "@angular/": "^2.2.4",

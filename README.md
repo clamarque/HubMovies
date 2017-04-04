@@ -16,7 +16,7 @@ This platform is still developing.
 
 `$ npm start`  
 
-or go on [hubmovies](https://hubmovies-a26fc.firebaseapp.com/)
+or you can run the app [here](https://hubmovies-a26fc.firebaseapp.com/)
 
 ### How update the theme
 

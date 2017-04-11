@@ -18,7 +18,7 @@ Hubmovies is an application developed with Angular (version 2) say "from scratch
 
 or you can run the app [here](https://hubmovies-a26fc.firebaseapp.com/)
 
-### How update the theme
+## How update the theme
 
 By default, the theme is a custom theme. For generate a new theme (based on material theme) you need use the command:  
 <code>$node-sass your_theme.scss your_theme.css</code>.  

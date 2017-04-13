@@ -190,9 +190,6 @@ sign-in-component button img {
     padding: 8px 24px;
     color: #00796b;
 }
-#navigation ul > li > a > span {
-    margin-left: 24px;
-}
 /*
 * Pagination *
 */

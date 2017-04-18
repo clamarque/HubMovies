@@ -3,7 +3,7 @@
 Hubmovies is an application developed with Angular (version 2) say "from scratch" (without angular-cli). This one allows to visualize the movies to come, currently and to save them in the playlists.
 
 <p align="center">
-<img src="https://github.com/clamarque/HubMovies/blob/master/assets/images/demo.PNG" width="750" height="400">
+<img src="https://raw.githubusercontent.com/clamarque/HubMovies/master/assets/images/demo.PNG" width="750" height="400">
 </p>
 
 ## Quick Start

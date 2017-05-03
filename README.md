@@ -34,4 +34,4 @@ You can find more details [here](https://github.com/angular/material2/blob/maste
 
 ## Who wants to help me?
 
-Want to file a bug, contribute some code, suggest ideas or improve documentation? don't hesitate! Send me a mail on: chabox59@gmail.com
+Want to file a bug, contribute some code, suggest ideas or improve documentation? don't hesitate! Send me a issue or a pull request.
